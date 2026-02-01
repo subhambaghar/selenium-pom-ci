@@ -30,7 +30,7 @@ class CartPage:
     def get_item_price(self):
         return self.wait.until(EC.visibility_of_element_located(self.ITEM_PRICE)).text
     def wait_until_item_removed(self):
-        self.wait.until(EC.invisibility_of_element(self.CART_ITEM))
+        self.wait.until(EC.invisibility_of_element_located(self.CART_ITEM))
     def remove_item(self):
         self.wait.until(EC.element_to_be_clickable(self.REMOVE_BTN)).click()
     def is_checkout_visible(self):
