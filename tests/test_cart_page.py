@@ -36,4 +36,5 @@ def test_remove_item_from_cart(driver):
     cart = CartPage(driver)
 
     cart.remove_item()
+    cart.wait_until_item_removed()
     assert not cart.is_item_present()
