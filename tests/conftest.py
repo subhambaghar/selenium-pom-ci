@@ -8,7 +8,6 @@ def driver():
     driver = get_driver()
     driver.get("https://www.saucedemo.com")
     yield driver
-    # time.sleep(5)
     driver.quit()
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item,call):

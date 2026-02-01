@@ -22,7 +22,7 @@ class CartPage:
     # 6️⃣ Checkout button is visible
 
     def is_item_present(self):
-        return len(self.driver.find_elements(*self.CART_ITEM)) > 0
+        return len(self.driver.find_elements(*self.ITEM_NAME)) > 0
     def get_item_name(self):
         return self.wait.until(EC.visibility_of_element_located(self.ITEM_NAME)).text
     def get_item_quantity(self):
@@ -31,7 +31,7 @@ class CartPage:
         return self.wait.until(EC.visibility_of_element_located(self.ITEM_PRICE)).text
     def remove_item(self):
         self.wait.until(EC.element_to_be_clickable(self.REMOVE_BTN)).click()
-    # def wait_until_item_removed(self):
-    #     self.wait.until(EC.invisibility_of_element_located(self.REMOVE_BTN))
+    def wait_until_item_removed(self):
+        self.wait.until(EC.invisibility_of_element_located(self.REMOVE_BTN))
     def is_checkout_visible(self):
         return self.wait.until(EC.visibility_of_element_located(self.CHECKOUT_BTN)).is_displayed()
